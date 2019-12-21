@@ -43,4 +43,4 @@ Upstream release: [v1.0][upstream-release]
 
 <sup>littlefs is licensed under [BSD-2-Clause][bsd-2-clause], as are these bindings.</sup>
 
-[bsd-2-clause]: https://github.com/kmackay/micro-ecc/blob/master/LICENSE.txt<Paste>
+[bsd-2-clause]: https://github.com/kmackay/micro-ecc/blob/master/LICENSE.txt
