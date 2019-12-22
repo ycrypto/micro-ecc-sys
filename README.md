@@ -29,8 +29,6 @@
 
 Low-level bindings to the [micro-ecc][micro-ecc] ECDH and ECDSA implementation.
 
-Currently, none of the configuration options are exposed.
-
 You may also be interested in the high-level, idiomatic Rust library [nisty][nisty].
 
 Upstream release: [v1.0][upstream-release]
@@ -38,6 +36,24 @@ Upstream release: [v1.0][upstream-release]
 [micro-ecc]: https://github.com/kmackay/micro-ecc
 [nisty]: https://github.com/nickray/nisty
 [upstream-release]: https://github.com/kmackay/micro-ecc/releases/tag/v1.0
+
+## Building / Usage
+
+`bindgen` as build dependency triggers the cargo build bug,
+`no_std` platforms need pre-generated bindings.
+
+For Cortex-M4 and Cortex-M33 platforms, these are [packaged][cortex-m4-bindings].
+To verify locally, run `cargo build --target thumbv7em-none-eabi --no-default-features`
+and compare with the packaged file.
+
+To use on such platforms, include `micro-ecc-sys` without the default features:
+```
+[dependencies.micro-ecc-sys]
+default-features = false
+```
+
+[cortex-m4-bindings]: https://github.com/nickray/micro-ecc-sys/blob/main/cortex-m4.bindings.rs
+
 
 #### License
 
