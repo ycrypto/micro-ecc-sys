@@ -10,6 +10,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Cortex-M33 is compatible with Cortex-M4 and its DSP extension instruction UMAAL.
     let cortex_m4 = target.starts_with("thumbv7em") || target.starts_with("thumbv8m.main");
+    let desktop = target.starts_with("x86_64-unknown-linux");
 
     let mut builder = cc::Build::new();
 
@@ -76,6 +77,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if cortex_m4 {
         std::fs::copy("cortex-m4.bindings.rs", out_dir.join("bindings.rs")).unwrap();
+    }
+
+    if desktop {
+        std::fs::copy("x86_64-unknown-linux.bindings.rs", out_dir.join("bindings.rs")).unwrap();
     }
 
     Ok(())

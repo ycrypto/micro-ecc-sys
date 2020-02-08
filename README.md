@@ -34,7 +34,7 @@ You may also be interested in the high-level, idiomatic Rust library [nisty][nis
 Upstream release: [v1.0][upstream-release]
 
 [micro-ecc]: https://github.com/kmackay/micro-ecc
-[nisty]: https://github.com/nickray/nisty
+[nisty]: https://crates.io/crates/nisty
 [upstream-release]: https://github.com/kmackay/micro-ecc/releases/tag/v1.0
 
 ## Building / Usage
