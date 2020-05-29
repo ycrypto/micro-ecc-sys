@@ -53,6 +53,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let bindings = bindgen::Builder::default()
         .header("micro-ecc/uECC.h")
+        .clang_arg(format!("--target={}", target))
         .use_core()
         .ctypes_prefix("cty")
         .rustfmt_bindings(true)
